@@ -18,13 +18,13 @@ const uploadFile = (file, throwError = false) => {
   })
 };
 
-const handleError = () => {
+const sendAlert = () => {
   alert("Error uploading file.")
 };
 
 export const Primary = () => <FileUpload uploadFile={uploadFile} />;
 
-export const HandleError = () => <FileUpload uploadFile={(formData) => uploadFile(formData, true) } onError={handleError} />
+export const HandleError = () => <FileUpload uploadFile={(formData) => uploadFile(formData, true) } onError={sendAlert} />
 
 export const AcceptImages = () => <FileUpload uploadFile={uploadFile} fileTypes={["image/png", "image/jpeg"]} />
 
